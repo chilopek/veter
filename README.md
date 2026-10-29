@@ -45,6 +45,17 @@ Set-ExecutionPolicy -Scope Process Bypass
 
 Для обновления уже установленной копии используется `-Update`. Для установки без меню добавьте `-NonInteractive -Mode auto`.
 
+## EXE-установщик
+
+Для сборки одного Windows-файла установки:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\build-installer.ps1
+```
+
+Готовый файл появится в `dist\LocalAssistantSetup.exe`. Он открывает графическое окно, предлагает режим модели и запускает установку из GitHub.
+
 Помощник работает в терминале. Команды, которые могут изменить файлы, запустить программу или выполнить PowerShell, требуют подтверждения.
 
 ## Архитектура
