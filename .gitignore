@@ -2,6 +2,7 @@
 data/
 downloads/
 assistant.local.json
+dist/
 __pycache__/
 *.py[cod]
 
