@@ -1,0 +1,7 @@
+.venv/
+data/
+downloads/
+assistant.local.json
+__pycache__/
+*.py[cod]
+
