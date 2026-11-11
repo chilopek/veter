@@ -5,15 +5,12 @@ import time
 import os
 import platform
 import webbrowser
-import sys
 import subprocess
 import datetime
-import random
 import re
 import json
 import warnings
 import asyncio
-import wave
 import pyaudio
 from vosk import Model, KaldiRecognizer
 
@@ -26,7 +23,6 @@ class LazyImports:
     """Ленивая загрузка тяжелых библиотек"""
     def __init__(self):
         self._pyautogui = None
-        self._pygetwindow = None
         self._telethon = None
         self._vosk = None
         self._pyaudio = None
@@ -42,18 +38,6 @@ class LazyImports:
                 print(f"❌ Ошибка загрузки pyautogui: {e}")
                 self._pyautogui = None
         return self._pyautogui
-    
-    @property
-    def pygetwindow(self):
-        if self._pygetwindow is None:
-            try:
-                import pygetwindow as gw
-                self._pygetwindow = gw
-                print("✅ pygetwindow загружен")
-            except ImportError as e:
-                print(f"❌ Ошибка загрузки pygetwindow: {e}")
-                self._pygetwindow = None
-        return self._pygetwindow
     
     @property
     def telethon(self):
