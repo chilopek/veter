@@ -37,6 +37,8 @@ def list_files(path: str = ".") -> list[dict[str, Any]]:
 
 
 def read_file(path: str, max_chars: int = 12000) -> dict[str, Any]:
+    if not 100 <= max_chars <= 30000:
+        raise ValueError("max_chars должен быть от 100 до 30000.")
     file_path = _resolve_workspace_path(path)
     if not file_path.is_file():
         raise ValueError(f"Файл не найден: {path}")
